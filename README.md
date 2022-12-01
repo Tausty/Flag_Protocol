@@ -22,3 +22,18 @@ the drawer starts at the first row, and if the flags show a specific value, they
 001=9  
 010=10  
 111= next colunm, reset to phase one. 
+
+# communcation instrutions (v RBG.2)
+raise up to 2 flags, each flag combination has a differnt value, if flag 1 & 2 are raised, the values shift. 
+
+| Phase 1| r           |   g         | b  |
+|:---    |    :----:   |     :----:  |---:|  
+| r      | 1           | change phase|4   |   
+| g      | change phase| 2           |5   |
+| b      | 4           | 5           |3   |  
+
+| Phase 2| r           |   g         | b  |
+|:---    |    :----:   |     :----:  |---:|  
+| r      | 6           | change phase|9   |   
+| g      | change phase| 7           |10  |
+| b      | 9           | 10          |8   |

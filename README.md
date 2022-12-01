@@ -1,5 +1,5 @@
 # Flag_Protocol
-this is a school group project between tausty, koko-mx, [dasha]. 
+this is a school group project between tausty, koko-mx, slawd5127. 
 the goal of the project is to communicate a 10 by 10 grid with random pixels filled in to another person with only flags. 
 # communication instructions 
 this system of communcation reduces the amount of data sent by almost half, however the more filled in the grid is the less the compression is.   

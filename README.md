@@ -24,7 +24,7 @@ current rate of transfer is 8.5 seconds per black pixel on average.
 010=10  
 111= next colunm, reset to phase one. 
 
-# communcation instrutions (v RBG.2)
+# communcation instrutions (v RBG.3)
 raise up to 2 flags, each flag combination has a differnt value, if flag 1 & 2 are raised, the values shift. 
 
 | Phase 1| r           |   g         | b  |
@@ -38,3 +38,46 @@ raise up to 2 flags, each flag combination has a differnt value, if flag 1 & 2 a
 | r      | 6           | change phase|9   |   
 | g      | change phase| 7           |10  |
 | b      | 9           | 10          |8   |
+
+if you sign a value twice in a row, it becomes like a hold.  and then if u sign another value twice, it will fill everything inbetween.
+
+# Communcatino instructions (vLossless_image_compression.1)
+this one is effiectvly the same as the previous ones, but isntead of saying the coordinites of the black sqaures, we instead say the length of white or black sqaurs. for examples:
+0011110111 = 2,4,1,3
+our flags have a total of 48 differnt combinations, so we could put our first 12 to amount of white sqaures, and the next 12 (13-24) to amount of black squares.
+
+all lefts and rights are from the perspective of the observer.
+
+1     2     3
+^     ^ 
+^     holders  
+holder right, observers left, 
+1 - - = 1 white pixles   
+1 2 - = 2    
+1 3 - = 3    
+1 - 2 = 4   
+1 - 3 = 5    
+1 2 3 = 6    
+1 3 2 = 7    
+2 - - = 8    
+2 1 - = 9    
+2 3 - = 10    
+2 - 1 = 11    
+2 - 3 = 12    
+2 1 3 = undefined    
+2 3 1 = undefined    
+     
+3 - - = 1 black    
+3 1 - = 2    
+3 2 - = 3    
+3 - 1 = 4    
+3 - 2 = 5    
+3 1 2 = 6    
+3 2 1 = 7   
+| 3 1 = 8    
+| 3 2 = 9     
+| 1 2 = 10    
+| 1 3 = 11   
+| 2 1 = 12    
+   
+

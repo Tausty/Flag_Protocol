@@ -41,17 +41,16 @@ raise up to 2 flags, each flag combination has a differnt value, if flag 1 & 2 a
 
 if you sign a value twice in a row, it becomes like a hold.  and then if u sign another value twice, it will fill everything inbetween.
 
-# Communcatino instructions (vLossless_image_compression.1)
+# Communcatino instructions (vLossless_image_compression.2)
 this one is effiectvly the same as the previous ones, but isntead of saying the coordinites of the black sqaures, we instead say the length of white or black sqaurs. for examples:
 0011110111 = 2,4,1,3
 our flags have a total of 48 differnt combinations, so we could put our first 12 to amount of white sqaures, and the next 12 (13-24) to amount of black squares.
 
 all lefts and rights are from the perspective of the observer.
 
-1     2     3
-^     ^ 
-^     holders  
-holder right, observers left, 
+flag 1 and 2 will be held in the senders right, observers left.   
+flag 3 will be hled in the senders left, observers right.   
+   
 1 - - = 1 white pixles   
 1 2 - = 2    
 1 3 - = 3    
@@ -64,8 +63,6 @@ holder right, observers left,
 2 3 - = 10    
 2 - 1 = 11    
 2 - 3 = 12    
-2 1 3 = undefined    
-2 3 1 = undefined    
      
 3 - - = 1 black    
 3 1 - = 2    

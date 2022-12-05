@@ -41,7 +41,8 @@ raise up to 2 flags, each flag combination has a different value, if flag 1 & 2 
 
 if you sign a value twice in a row, it becomes like a hold.  and then if you sign another value twice, it will fill everything in between.
 
-# Communication instructions (vLossless_image_compression.8.1)
+# Communication instructions (vLossless_image_compression.8.2)
+*current rate is 12.16 seconds per pixel*
 This one is effectively the same as the previous ones, but instead of saying the coordinates of the black squares, we instead say the length of white or black squares. for examples:     
 0011110111 = 2,4,1,3      
  ~~our flags have a total of 48 different combinations, so we could put our first 12 to amount of white squares, and the next 12 (13-24) to amount of black squares.~~   

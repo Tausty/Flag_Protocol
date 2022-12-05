@@ -72,14 +72,15 @@ flag 3 will be held in the senders left, observers right.
 2-3 = 5     
 213 = 6     
 231 = 7    
-
+      
 ### Error prevention
-3 = i have received what you said, and i'm going to send something back
-31- = u signed back the correct number 
-32- = u signaled the wrong number back, im repeating the current number
-
-all  usable combinations 
-usable in this case means it's visually unique. for example 12- looks  a lot like 1-2 so it's better to just have one of the 2
+3 = i have received what you said, and i'm going to send something back    
+31- = u signed back the correct number        
+32- = u signaled the wrong number back, im repeating the current number    
+   
+   
+# all  *usable* combinations    
+usable in this case means it's visually unique. for example 12- looks  a lot like 1-2 so it's better to just have one of the two combination
 1--     
 12-   
 13-    

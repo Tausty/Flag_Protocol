@@ -73,6 +73,7 @@ flag 3 will be held in the senders left, observers right.
 213 = 6     
 231 = 7    
 
+### Error prevention
 3 = i have received what you said, and i'm going to send something back
 31- = u signed back the correct number 
 32- = u signaled the wrong number back, im repeating the current number

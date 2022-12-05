@@ -41,7 +41,7 @@ raise up to 2 flags, each flag combination has a different value, if flag 1 & 2 
 
 if you sign a value twice in a row, it becomes like a hold.  and then if you sign another value twice, it will fill everything in between.
 
-# Communication instructions (vLossless_image_compression.3)
+# Communication instructions (vLossless_image_compression.4)
 This one is effectively the same as the previous ones, but instead of saying the coordinates of the black squares, we instead say the length of white or black squares. for examples:     
 0011110111 = 2,4,1,3      
  ~~our flags have a total of 48 different combinations, so we could put our first 12 to amount of white squares, and the next 12 (13-24) to amount of black squares.~~   
@@ -53,22 +53,25 @@ all lefts and rights are from the perspective of the observer.
 
 Flag 1 and 2 will be held in the sender's right, observers left.   
 flag 3 will be held in the senders left, observers right.   
-   
-1-- = 1
-12- = 2
-13- = 3
-1-2 = 4
-1-3 = 5
-123 = 6
-132 = 7
 
-2-- = 1
-21- = 2
-23- = 3
-2-1 = 4
-2-3 = 5
-213 = 6
-231 = 7
+   
+### White Squares
+1-- = 1    
+12- = 2     
+13- = 3     
+1-2 = 4     
+1-3 = 5     
+123 = 6     
+132 = 7     
+
+### Black Squares
+2-- = 1    
+21- = 2     
+23- = 3     
+2-1 = 4     
+2-3 = 5     
+213 = 6     
+231 = 7    
 
 3 = i have received what you said, and i'm going to send something back
 31- = u signed back the correct number 

@@ -41,7 +41,7 @@ raise up to 2 flags, each flag combination has a different value, if flag 1 & 2 
 
 if you sign a value twice in a row, it becomes like a hold.  and then if you sign another value twice, it will fill everything in between.
 
-# Communication instructions (vLossless_image_compression.5)
+# Communication instructions (vLossless_image_compression.7)
 This one is effectively the same as the previous ones, but instead of saying the coordinates of the black squares, we instead say the length of white or black squares. for examples:     
 0011110111 = 2,4,1,3      
  ~~our flags have a total of 48 different combinations, so we could put our first 12 to amount of white squares, and the next 12 (13-24) to amount of black squares.~~   
@@ -78,7 +78,12 @@ flag 3 will be held in the senders left, observers right.
 31- = u signed back the correct number        
 32- = u signaled the wrong number back, im repeating the current number   
 321 = somethings wrong, go back a line. can be used multilple time to signal how many lines. 
-   
+
+32 = if the recevier sends this, they signal that they think the sender made a mistake.
+the sender can then respond with
+321 = ur right, lets reset
+31= ur wrong, it was intentional, do the thing.
+
    
 # all  *usable* combinations    
 usable in this case means it's visually unique. for example 12- looks  a lot like 1-2 so it's better to just have one of the two combination

@@ -24,20 +24,20 @@ The current rate of transfer is 8.5 seconds per black pixel on average.
 010=10  
 111= next column, reset to phase one. 
 
-# communication instructions (v RBG.3)
+# communication instructions (v ~~RBG~~123.4)
 raise up to 2 flags, each flag combination has a different value, if flag 1 & 2 are raised, the values shift. 
 
-| Phase 1| r           |   g         | b  |
+| Phase 1| 1           |   2         | 3  |
 |:---    |    :----:   |     :----:  |---:|  
-| r      | 1           | change phase|4   |   
-| g      | change phase| 2           |5   |
-| b      | 4           | 5           |3   |  
+| 1      | 1           | change phase|4   |   
+| 2      | change phase| 2           |5   |
+| 3      | 4           | 5           |3   |  
 
-| Phase 2| r           |   g         | b  |
+| Phase 2| 1           |   2         | 3  |
 |:---    |    :----:   |     :----:  |---:|  
-| r      | 6           | change phase|9   |   
-| g      | change phase| 7           |10  |
-| b      | 9           | 10          |8   |
+| 1      | 6           | change phase|9   |   
+| 2      | change phase| 7           |10  |
+| 3      | 9           | 10          |8   |
 
 24 possible combinations
 
@@ -47,33 +47,33 @@ raise up to 2 flags, each flag combination has a different value, if flag 1 & 2 
 
 Black color
 
-~ r= 1    
-~ g= 2    
-~ b= 3    
-r+b= 4    
-g+b= 5    
-r+g= shift values     
-~ R= 6    
-~ G= 7    
-~ B= 8    
-R+B= 9    
-G+B=10    
-R+G= End row    
+~ 1= 1    
+~ 2= 2    
+~ 3= 3    
+1+3= 4    
+2+3= 5    
+1+2= shift values     
+~ 1= 6    
+~ 2= 7    
+~ 3= 8    
+1+3= 9    
+2+3=10    
+1+2= End row    
 
 White color
 
-r ~= 1     
-g ~= 2    
-b ~= 3    
-b+r= 4    
-b+g= 5    
-g+r= shift values    
-R ~= 6    
-G ~= 7    
-B ~= 8    
-B+R= 9    
-B+G= 10    
-G+R= End row    
+1 ~= 1     
+2 ~= 2    
+3 ~= 3    
+3+1= 4    
+3+2= 5    
+2+1= shift values    
+1 ~= 6    
+2 ~= 7    
+3 ~= 8    
+3+1= 9    
+3+2= 10    
+2+1= End row    
 
 
 

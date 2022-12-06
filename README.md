@@ -39,7 +39,44 @@ raise up to 2 flags, each flag combination has a different value, if flag 1 & 2 
 | g      | change phase| 7           |10  |
 | b      | 9           | 10          |8   |
 
-if you sign a value twice in a row, it becomes like a hold.  and then if you sign another value twice, it will fill everything in between.
+24 possible combinations
+
+~ + (letter) = right hand    
+(letter) + ~ = left hand    
+(this will be from the perspective of the person that is sending the information)
+
+Black color
+
+~ r= 1    
+~ g= 2    
+~ b= 3    
+r+b= 4    
+g+b= 5    
+r+g= shift values     
+~ R= 6    
+~ G= 7    
+~ B= 8    
+R+B= 9    
+G+B=10    
+R+G= End row    
+
+White color
+
+r ~= 1     
+g ~= 2    
+b ~= 3    
+b+r= 4    
+b+g= 5    
+g+r= shift values    
+R ~= 6    
+G ~= 7    
+B ~= 8    
+B+R= 9    
+B+G= 10    
+G+R= End row    
+
+
+
 
 # Communication instructions (vLossless_image_compression.8.2)
 *current rate is 12.16 seconds per pixel*

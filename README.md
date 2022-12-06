@@ -24,7 +24,7 @@ The current rate of transfer is 8.5 seconds per black pixel on average.
 010=10  
 111= next column, reset to phase one. 
 
-# communication instructions (v ~~RBG~~123.4)
+# communication instructions (v ~~RBG~~123.5)
 raise up to 2 flags, each flag combination has a different value, if flag 1 & 2 are raised, the values shift. 
 
 | Phase 1| 1           |   2         | 3  |
@@ -58,7 +58,7 @@ Black color
 ~ 3= 8    
 1+3= 9    
 2+3=10    
-1+2= End row    
+1+2= shift values  
 
 White color
 
@@ -73,7 +73,10 @@ White color
 3 ~= 8    
 3+1= 9    
 3+2= 10    
-2+1= End row    
+2+1= shift values 
+
+123 = row end
+321 = reset row 
 
 
 

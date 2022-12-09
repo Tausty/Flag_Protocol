@@ -24,7 +24,7 @@ The current rate of transfer is 8.5 seconds per black pixel on average.
 010=10  
 111= next column, reset to phase one. 
 
-# communication instructions (v ~~RBG~~123.6.1)
+# communication instructions (v ~~RBG~~123.7.1)
 *current rate is 4.25 seconds per pixel*     
 raise up to 2 flags, each flag combination has a different value, if flag 1 & 2 are raised, the values shift. 
 
@@ -46,6 +46,10 @@ raise up to 2 flags, each flag combination has a different value, if flag 1 & 2 
 (letter) + ~ = left hand    
 (this will be from the perspective of the person that is sending the information)
 
+the first transfer of information will be        
+123 = the grid looks hand made      
+321 = the grid looks random       
+then continues as normal     
 Black color
 
 0 0 1= 1    
@@ -76,14 +80,17 @@ White color
 3+2 0= 10    
 2+1 0 = shift values 
 
-123 = repeat last row   
-321 = reset row    
-312 = sender is done the grid, move on. if sent twice in a row means the whole thing is done.      
+123 = repeat last row      
+321 = reset row         
+312 = sender is done the grid, move on. if sent twice in a row means the whole thing is done.         
     
-receiver can send these back    
-1 0 0 = received    
-2 0 0 = repeat    
-3 0 0 = im done    
+receiver can send these back      
+1 0 0 = received      
+2 0 0 = repeat      
+3 0 0 = im done      
+1 2 0 = reset row       
+1 3 0 = i think somethings gone wrong, lets reset the the current 10x10         
+   
 
 
 

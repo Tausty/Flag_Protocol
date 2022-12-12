@@ -24,7 +24,7 @@ The current rate of transfer is 8.5 seconds per black pixel on average.
 010=10  
 111= next column, reset to phase one. 
 
-# communication instructions (v ~~RBG~~123.8.2)
+# communication instructions (v ~~RBG~~123.8.3)
 *current rate is 4.25 seconds per pixel*     
 raise up to 2 (3 flag combinations are used for error prevention and correcting) flags, each flag combination has a different value, if flag 1 & 2 are raised, the values shift. 
 
@@ -91,7 +91,8 @@ receiver can send these back
 3 0 0 = im done      
 1 2 0 = reset row         
 1 3 0 = i think somethings gone wrong, lets reset the the current 10x10            
-        
+    
+the cheat sheet [doc:](https://docs.google.com/document/d/1ymZc2aoh1iTD2PP5l0dsVyWquVKApO4bHg-8lmNhSuE/edit?usp=sharing)
 ### Rules for 123~~rgb~~
 1. alternate communications      
 2. each transfer requires the receiver to raise a flag to conferm that they got the information       

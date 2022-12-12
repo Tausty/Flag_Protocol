@@ -24,9 +24,9 @@ The current rate of transfer is 8.5 seconds per black pixel on average.
 010=10  
 111= next column, reset to phase one. 
 
-# communication instructions (v ~~RBG~~123.7.1)
+# communication instructions (v ~~RBG~~123.8.2)
 *current rate is 4.25 seconds per pixel*     
-raise up to 2 flags, each flag combination has a different value, if flag 1 & 2 are raised, the values shift. 
+raise up to 2 (3 flag combinations are used for error prevention and correcting) flags, each flag combination has a different value, if flag 1 & 2 are raised, the values shift. 
 
 | Phase 1| 1           |   2         | 3  |
 |:---    |    :----:   |     :----:  |---:|  
@@ -42,15 +42,16 @@ raise up to 2 flags, each flag combination has a different value, if flag 1 & 2 
 
 24 possible combinations
 
-~ + (letter) = right hand    
-(letter) + ~ = left hand    
+0 0 1 = right hand    
+1 0 0 = left hand    
 (this will be from the perspective of the person that is sending the information)
 
 the first transfer of information will be        
 123 = the grid looks hand made      
 321 = the grid looks random       
-then continues as normal     
-Black color
+then continues as normal       
+
+### Black color
 
 0 0 1= 1    
 0 0 2= 2    
@@ -65,7 +66,7 @@ Black color
 0 2+3=10    
 0 1+2= shift values  
 
-White color
+### White color
 
 1 0 0= 1     
 2 0 0= 2    
@@ -88,11 +89,16 @@ receiver can send these back
 1 0 0 = received      
 2 0 0 = repeat      
 3 0 0 = im done      
-1 2 0 = reset row       
-1 3 0 = i think somethings gone wrong, lets reset the the current 10x10         
-   
-
-
+1 2 0 = reset row         
+1 3 0 = i think somethings gone wrong, lets reset the the current 10x10            
+        
+### Rules for 123~~rgb~~
+1. alternate communications      
+2. each transfer requires the receiver to raise a flag to conferm that they got the information       
+3. the sender will begin with 123 or 321     
+4. the sender will then start sending black and white pixel combination, witht the number meaning the amount of pixels (ie: 3+10 = the receiver has to draw 4 white pixels)       
+5. once the grid is done the sender will send 312, and if there are no more grids they will send it again.      
+6. if there is a mistake, the receiver can ask for a repeat, reset the row, or reset the entire 10x10 grid.       
 
 # Communication instructions (vLossless_image_compression.8.2)
 *current rate is 12.16 seconds per pixel*

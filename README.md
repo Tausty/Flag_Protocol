@@ -104,7 +104,7 @@ The current rate of transfer is 8.5 seconds per black pixel on average.
 010=10  
 111= next column, reset to phase one. 
 
-# Communication instructions (vLossless_image_compression.8.2 *OUTDATED*
+# Communication instructions (vLossless_image_compression.8.2) *OUTDATED*
 *current rate is 12.16 seconds per pixel*
 This one is effectively the same as the previous ones, but instead of saying the coordinates of the black squares, we instead say the length of white or black squares. for examples:     
 0011110111 = 2,4,1,3      

@@ -48,7 +48,9 @@ raise up to 2 (3 flag combinations are used for error prevention and correcting)
 
 the first transfer of information will be        
 123 = the grid looks hand made      
-321 = the grid looks random       
+321 = the grid looks random    
+If sender sends 321, try to only use 1 flag at a time (exept for error prevention)         
+
 then continues as normal       
 
 ### Black color

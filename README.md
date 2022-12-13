@@ -2,7 +2,7 @@
 This is a school group project between tausty, koko-mx, slawd5127. 
 The goal of the project is to communicate a 10 by 10 grid with random pixels filled in to another person with only flags. 
 
-# communication instructions (v ~~RBG~~123.9.3)
+# communication instructions (v ~~RBG~~123.10.4)
 *current rate is 4.25 seconds per pixel*     
 raise up to 2 (3 flag combinations are used for error prevention and correcting) flags, each flag combination has a different value, if flag 1 & 2 are raised, the values shift. 
 
@@ -77,9 +77,11 @@ the cheat sheet [doc:](https://docs.google.com/document/d/1ymZc2aoh1iTD2PP5l0dsV
 1. alternate communications      
 2. each transfer requires the receiver to raise a flag to confirm that they got the information       
 3. the sender will begin with 123 or 321     
-4. the sender will then start sending black and white pixel combination, with the number meaning the amount of pixels (ie: 3+10 = the receiver has to draw 4 white pixels)       
+4. the sender will then start sending black and white pixel combination, with the number meaning the amount of pixels (ie: 3+1 0 = the receiver has to draw 4 white pixels)       
 5. Once the grid is done the sender will send 312, and if there are no more grids they will send it again.      
-6. If there is a mistake, the receiver can ask for a repeat, reset the row, or reset the entire 10x10 grid.       
+6. If there is a mistake, the receiver can ask for a repeat, reset the row, or reset the entire 10x10 grid. (the sender can also ask for this)
+7. the larger flag combination should only be used if the grid is clearly a pattern, otherwise stick to raising only 1 flag for the sake of speed
+8. the receiver should send their confirmation before starting to draw it, so the sender does not need to keep the flag up for long periods of time
 
 # Communication Instructions (v0.2) *OUTDATED*
 This system of communication reduces the amount of data sent by almost half, however the more filled in the grid the less the compression is.   

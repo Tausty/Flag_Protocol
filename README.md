@@ -1,28 +1,6 @@
 # Flag_Protocol
 This is a school group project between tausty, koko-mx, slawd5127. 
 The goal of the project is to communicate a 10 by 10 grid with random pixels filled in to another person with only flags. 
-# communication instructions (v0.2)
-This system of communication reduces the amount of data sent by almost half, however the more filled in the grid the less the compression is.   
-raise up to 3 flags, if it's down it equals 0, if it's up it equals 1. if all 3 flags are raised, it cycles to the next communication phase.     
-Each combination of flags means a different value.    
-The drawer starts at the first row, and if the flags show a specific value, they go to that column. Finally, if they see all 3 flags raised at the same time twice, they go to the next row. 
-
-The current rate of transfer is 8.5 seconds per black pixel on average. 
-### first phase values   
-100=1  
-110=2  
-011=3  
-001=4  
-010=5   
-111=next phase  
-
-### second phase values
-100=6  
-110=7  
-011=8  
-001=9  
-010=10  
-111= next column, reset to phase one. 
 
 # communication instructions (v ~~RBG~~123.9.3)
 *current rate is 4.25 seconds per pixel*     
@@ -47,9 +25,9 @@ raise up to 2 (3 flag combinations are used for error prevention and correcting)
 (this will be from the perspective of the person that is sending the information)
 
 the first transfer of information will be        
-123 = the grid looks hand made      
+123 = the grid looks handmade      
 321 = the grid looks random    
-If sender sends 321, try to only use 1 flag at a time (exept for error prevention)         
+If sender sends 321, try to only use 1 flag at a time (except for error prevention)         
 
 then continues as normal       
 
@@ -97,13 +75,36 @@ receiver can send these back
 the cheat sheet [doc:](https://docs.google.com/document/d/1ymZc2aoh1iTD2PP5l0dsVyWquVKApO4bHg-8lmNhSuE/edit?usp=sharing)
 ### Rules for 123~~rgb~~
 1. alternate communications      
-2. each transfer requires the receiver to raise a flag to conferm that they got the information       
+2. each transfer requires the receiver to raise a flag to confirm that they got the information       
 3. the sender will begin with 123 or 321     
-4. the sender will then start sending black and white pixel combination, witht the number meaning the amount of pixels (ie: 3+10 = the receiver has to draw 4 white pixels)       
-5. once the grid is done the sender will send 312, and if there are no more grids they will send it again.      
-6. if there is a mistake, the receiver can ask for a repeat, reset the row, or reset the entire 10x10 grid.       
+4. the sender will then start sending black and white pixel combination, with the number meaning the amount of pixels (ie: 3+10 = the receiver has to draw 4 white pixels)       
+5. Once the grid is done the sender will send 312, and if there are no more grids they will send it again.      
+6. If there is a mistake, the receiver can ask for a repeat, reset the row, or reset the entire 10x10 grid.       
 
-# Communication instructions (vLossless_image_compression.8.2)
+# Communication Instructions (v0.2) *OUTDATED*
+This system of communication reduces the amount of data sent by almost half, however the more filled in the grid the less the compression is.   
+raise up to 3 flags, if it's down it equals 0, if it's up it equals 1. if all 3 flags are raised, it cycles to the next communication phase.     
+Each combination of flags means a different value.    
+The drawer starts at the first row, and if the flags show a specific value, they go to that column. Finally, if they see all 3 flags raised at the same time twice, they go to the next row. 
+
+The current rate of transfer is 8.5 seconds per black pixel on average. 
+### first phase values   
+100=1  
+110=2  
+011=3  
+001=4  
+010=5   
+111=next phase  
+
+### second phase values
+100=6  
+110=7  
+011=8  
+001=9  
+010=10  
+111= next column, reset to phase one. 
+
+# Communication instructions (vLossless_image_compression.8.2 *OUTDATED*
 *current rate is 12.16 seconds per pixel*
 This one is effectively the same as the previous ones, but instead of saying the coordinates of the black squares, we instead say the length of white or black squares. for examples:     
 0011110111 = 2,4,1,3      
@@ -139,12 +140,12 @@ flag 3 will be held in the senders left, observers right.
 ### Error prevention
 3 = i have received what you said, and i'm going to send something back    
 31- = u signed back the correct number        
-3-1 = line is over, were on to the next one. 
+3-1 = line is over, we're on to the next one. 
 32- = u signaled the wrong number back, im repeating the current number   
-321 = somethings wrong, go back a line. can be used multilple time to signal how many lines.
+321 = something wrong, go back a line. can be used multiple times to signal how many lines.
 312 = i missed what you said, repeat please   
    
-32 = if the recevier sends this, they signal that they think the sender made a mistake.
+32 = if the receiver sends this, they signal that they think the sender made a mistake.
 the sender can then respond with   
 321 = ur right, lets reset    
 31= ur wrong, it was intentional, do the thing.    
@@ -188,4 +189,3 @@ usable in this case means it's visually unique. for example 12- looks  a lot lik
 123     
 132     
      
-    
